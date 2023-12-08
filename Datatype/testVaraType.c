@@ -89,5 +89,13 @@ int main()
     }
 #endif
 
+    int num1 = 10;
+    int num2 = 20;
+
+    /* 三目运算符 */
+    /*以问号和冒号为分界，问号前语句为真，执行冒号前的语句；为假，执行冒号后的语句*/
+    int num3 = num1 > num2 ? 100 : 666;
+    printf("num3 = %d\n",num3);
+
     return 0;
 }
