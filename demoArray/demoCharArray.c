@@ -2,6 +2,9 @@
 
 #define BUFFER_SIZE 10
 
+/* 这也是个常量 */
+const int g_num = 10;
+
 int main()
 {
 
@@ -33,7 +36,7 @@ int main()
 
 #endif
 
-#if 1
+#if 0
 
     /* 两种方式的区别是第一种没有'\0',第二种有'\0' */
     char buffer[] = {'h','e','l','l','o','w','o','r','l','d'};
@@ -45,6 +48,21 @@ int main()
     printf("buffer : %d, buffer1 : %d\n", len, len1);
     printf("buffer : %s, buffer1 : %s\n", buffer, buffer1);
 
+
+#endif
+
+#if 1
+    
+    /* 字符串和字符数组的区别 */
+    char buffer1[] = "hello world";
+    buffer1[0] = 'H';
+    printf("buffer1:%s\n", buffer1);
+    
+    char * ptr = "hello world";
+
+    /* 字符串是常量，它是存放在全局区的 */
+    ptr[0] = 'H';
+    printf("%c\n", *ptr);   // *ptr 即取第一个元素
 
 #endif
 
