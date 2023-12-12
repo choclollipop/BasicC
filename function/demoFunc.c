@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include "calculateFunc.h"
+#include <string.h>
+#include "myString.h"
 
 /* 
     函数参数：可有可无 
@@ -68,6 +70,8 @@ int main()
     }
 
 #endif
+
+#if 0
     int num1 = 50;
     int num2 = 60;
     int sum = calculateAdd(num1, num2);
@@ -81,7 +85,21 @@ int main()
 
     int div = calculateDiv(num1, num2);
     printf("div:%d\n", div);
-    
+#endif
+
+    char array[100] = "hello world";
+    int len = myStringlen(array);
+    printf("len=%d\n", len);
+
+    myStringcat(array, "nihao");
+    printf("%s\n", array);
+
+    myStringcpy(array,"1234");
+    printf("%s\n", array);
+
+    int ret = myStringcmp("hello","helloa");
+    printf("ret = %d\n", ret);
+
 
     return  0;
 }
