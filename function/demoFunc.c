@@ -87,6 +87,7 @@ int main()
     printf("div:%d\n", div);
 #endif
 
+#if 0
     char array[100] = "hello world";
     int len = myStringlen(array);
     printf("len=%d\n", len);
@@ -99,7 +100,20 @@ int main()
 
     int ret = myStringcmp("hello","helloa");
     printf("ret = %d\n", ret);
+#endif
 
+    char * ptr = NULL;
+    int len = 0;
+
+    #if 0
+
+    len = strlen(ptr);
+    #else
+
+    len = myStringlen(ptr);
+    #endif
+
+    printf("len : %d\n", len);
 
     return  0;
 }

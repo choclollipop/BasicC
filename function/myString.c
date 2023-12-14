@@ -1,11 +1,13 @@
 #include "myString.h"
 
 /* 状态码 */
-enum STATUS_CODE
+typedef enum STATUS_CODE
 {
-    ON_S1GREATER = 1,
+    ON_ILLEGAL = -2,
+    
     ON_S2GREATER = -1,
     ON_EQUAL = 0,
+    ON_S1GREATER = 1,
 
 } STATUS_CODE;
 
@@ -64,6 +66,14 @@ int myStringcmp(const char * string1, const char * string2)
     int cmp;
     int lenStr1 = myStringlen(string1);
     int lenStr2 = myStringlen(string2);
+
+    /* 优化 */
+    if(!string1 || !string2)
+    {
+        return ON_ILLEGAL;
+    }
+
+    /**/
 
     if(lenStr1 <= lenStr2)
     {
