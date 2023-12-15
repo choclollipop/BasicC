@@ -53,6 +53,28 @@ void printStr()
     printf("hello world\n");
 }
 
+/* 计算传入参数 */
+int calStr(const char * str)
+{
+    if(!str)
+    {
+        return 0;
+    }
+
+    /* 给str指针做备份，防止由于str偏移后，导致无法释放该指针 */
+    const char * tmpPtr = str;
+    int count = 0;
+    while(*tmpPtr != '\0')
+    {
+        count++;
+        tmpPtr++;
+    }
+
+    printf("func str:%s\n", str);    //此时什么都不打印，因为str指针已经指向了'\0'字符
+
+    return count;
+}
+
 int main()
 {
 
@@ -124,6 +146,7 @@ int main()
 
 #endif
 
+#if 0 
     int choice = 0;
 
     /* 函数指针就是钩子函数，主要用在回调函数中 */
@@ -134,6 +157,12 @@ int main()
     {
         printStr();
     }
+#endif
+
+    char * buffer = "hello world";
+
+    int len = calStr(buffer);
+    printf("len:%d\n", len);
 
     return  0;
 }
