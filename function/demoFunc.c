@@ -47,6 +47,12 @@ int myAddNum(int num1, int num2)
 
 #endif
 
+/* 函数 */
+void printStr()
+{
+    printf("hello world\n");
+}
+
 int main()
 {
 
@@ -102,6 +108,7 @@ int main()
     printf("ret = %d\n", ret);
 #endif
 
+#if 0
     char * ptr = NULL;
     int len = 0;
 
@@ -114,6 +121,19 @@ int main()
     #endif
 
     printf("len : %d\n", len);
+
+#endif
+
+    int choice = 0;
+
+    /* 函数指针就是钩子函数，主要用在回调函数中 */
+    void (*func)() = printStr;
+    func();
+
+    if(choice == 1)
+    {
+        printStr();
+    }
 
     return  0;
 }
