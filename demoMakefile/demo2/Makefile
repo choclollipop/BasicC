@@ -7,19 +7,7 @@ TARGET=main
 $(TARGET):$(OBJ)
 	$(CC) $^ -o $@
 
-add.o:add.c
-	$(CC) -c $^ -o $@
-
-sub.o:sub.c
-	$(CC) -c $^ -o $@
-
-mul.o:mul.c
-	$(CC) -c $^ -o $@
-
-div.o:div.c
-	$(CC) -c $^ -o $@
-
-main.o:main.c
+%.o:%.c
 	$(CC) -c $^ -o $@
 
 # 伪目标
